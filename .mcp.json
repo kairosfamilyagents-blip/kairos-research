@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "kairos-research": {
+      "type": "http",
+      "url": "https://kairosfamilyagents.com/mcp"
+    }
+  }
+}
