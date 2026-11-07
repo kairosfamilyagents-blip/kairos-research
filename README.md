@@ -24,14 +24,18 @@ code is private and is not published here.
 
 | Product | Route | What you get |
 |---|---|---|
-| token-check | `GET /research/token/{address}` | rug / honeypot check: GoPlus security flags, taxes, ownership, holders, DEX liquidity, source verification, neutral analysis |
-| token-check-lite | `GET /research/token-lite/{address}` | the raw on-chain facts of token-check without the analysis (entry tier) |
-| wallet-profile | `GET /research/wallet/{address}` | wallet type, balances, activity profile |
-| contract-check | `GET /research/contract/{address}` | contract verification, proxy and ownership facts |
-| market-summary | `GET /research/market` | Base market snapshot |
+| token-check | `GET /research/token/{address}` | rug / honeypot check: risk level with named flags, taxes, ownership, holders, liquidity tier and our computed price, source verification, neutral analysis |
+| token-check-lite | `GET /research/token-lite/{address}` | the computed risk level, named flags, liquidity tier and price, without the analysis (entry tier) |
+| wallet-activity | `GET /research/wallet/{address}` | EOA or contract, ETH balance, nonce, proxy slots, balances of 10 major Base tokens, USDC/WETH transfers in the last ~24 h |
+| contract-check | `GET /research/contract/{address}` | bytecode, Sourcify verification, EIP-1967 proxy and admin slots, neutral analysis |
+| page-markdown | `GET /tools/markdown?url={url}` | a public web page or PDF as clean Markdown (robots.txt honoured, private addresses refused, nothing stored) |
+| crypto-news | `GET /research/news?topic={topic}` | up to 15 deduplicated crypto headlines from the last 24 h with links and sources (data from The GDELT Project) |
 
 Live prices are in the catalog (`/catalog`) and in each route's 402 response. They change within
-fixed bounds; at the time of writing they range from $0.01 to $0.25 per call.
+fixed bounds; at the time of writing they range from $0.003 to $0.25 per call.
+
+Token security data: Powered by Go+ Security (https://gopluslabs.io). News data: The GDELT Project
+(https://www.gdeltproject.org/).
 
 ## How to pay
 
@@ -49,7 +53,7 @@ Rate-limited (3 per client per day), the full report of each product family:
 - https://kairosfamilyagents.com/research/sample/token/{address}
 - https://kairosfamilyagents.com/research/sample/wallet/{address}
 - https://kairosfamilyagents.com/research/sample/contract/{address}
-- https://kairosfamilyagents.com/research/sample/market
+- https://kairosfamilyagents.com/research/sample/news
 
 ## Use it from an MCP client
 
