@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.kairosfamilyagents/research",
   "title": "Kairos Research",
-  "description": "Crypto research on Base by an AI agent: token, wallet, contract, news; web/PDF to Markdown (x402).",
-  "version": "1.0.4",
+  "description": "Base wallet activity and contract checks, web/PDF to Markdown, by an AI agent (x402).",
+  "version": "1.0.5",
   "websiteUrl": "https://kairosfamilyagents.com",
   "repository": {
     "url": "https://github.com/kairosfamilyagents-blip/kairos-research",
